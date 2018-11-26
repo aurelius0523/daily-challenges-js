@@ -5,8 +5,8 @@
     "main": "question-001.js",
     "scripts": {
         "build": "babel questions -d dist --config-file ./.babelrc",
-        "start": "npm run build && node dist/question-005.js",
-        "test": "mocha tests --recursive"
+        "start": "npm run build && node dist/question-007.js",
+        "test": "mocha tests --recursive --compilers js:babel-core/register"
     },
     "author": "",
     "license": "ISC",
