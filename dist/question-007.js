@@ -32,27 +32,39 @@
 //bfbf
 //zz
 
-var input = '1111';
-var combinationCount = 1;
+//3333
+//cccc
 
-// overlap loop
-for (var i = 0; i < input.length - 1; i++) {
-    var number = input[i] + input[i + 1];
-    if (number <= 26) {
-        console.log('overlap loop number = ' + number);
-        combinationCount += 1;
+//2222
+//bbbb
+//bvb
+//bbv
+//vbb
+//vv
+
+//12345
+//abcde
+//lcde
+//ayde
+
+var getNumberOfWays = function getNumberOfWays(input) {
+    var numberOfWays = 0;
+    if (input.startsWith('0')) {
+        return numberOfWays;
     }
-}
 
-// non-overlap loop
-var duplicateArray = [];
-for (var j = 0; j < input.length; j += 2) {
-    var _number = input[j] + input[j + 1];
-    if (!_number.includes('undefined') && _number <= 26 && !duplicateArray.includes(_number)) {
-        console.log('non overlap loop number = ' + _number);
-        combinationCount += 1;
-        duplicateArray.push(_number);
+    if (input.length === 0 || input === undefined) {
+        return 1;
     }
-}
 
-console.log(combinationCount);
+    var firstTwoNumbers = input.charAt(0) + input.charAt(1);
+    if (input.length >= 2 && parseInt(firstTwoNumbers) > 10 && parseInt(firstTwoNumbers) <= 26) {
+        console.log('here');
+        return getNumberOfWays(input.substring(1)) + getNumberOfWays(input.substring(2));
+    } else {
+        console.log('there');
+        return getNumberOfWays(input.substring(1));
+    }
+};
+
+console.log(getNumberOfWays('2626'));
