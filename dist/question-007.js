@@ -8,45 +8,6 @@
  * You can assume that the messages are decodable. For example, '001' is not allowed.
  */
 
-// 1542
-// aedb
-// odb
-
-//1237
-//abcg
-//mcg
-//ayg
-
-//26262
-//bfbfb
-//zzb
-
-//1111
-//aaaa
-//aka
-//kaa
-//aak
-//kk
-
-//2626
-//bfbf
-//zz
-
-//3333
-//cccc
-
-//2222
-//bbbb
-//bvb
-//bbv
-//vbb
-//vv
-
-//12345
-//abcde
-//lcde
-//ayde
-
 var getNumberOfWays = function getNumberOfWays(input) {
     var numberOfWays = 0;
     if (input.startsWith('0')) {
@@ -59,10 +20,8 @@ var getNumberOfWays = function getNumberOfWays(input) {
 
     var firstTwoNumbers = input.charAt(0) + input.charAt(1);
     if (input.length >= 2 && parseInt(firstTwoNumbers) > 10 && parseInt(firstTwoNumbers) <= 26) {
-        console.log('here');
         return getNumberOfWays(input.substring(1)) + getNumberOfWays(input.substring(2));
     } else {
-        console.log('there');
         return getNumberOfWays(input.substring(1));
     }
 };
