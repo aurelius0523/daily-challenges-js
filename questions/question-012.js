@@ -12,4 +12,4 @@
  * For example, if X = {1, 3, 5}, you could climb 1, 3, or 5 steps at a time.
  */
 
-const main13 = () => {};
+const main12 = () => {};

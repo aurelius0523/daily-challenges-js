@@ -5,7 +5,7 @@
     "main": "question-001.js",
     "scripts": {
         "build": "babel questions -d dist --config-file ./.babelrc",
-        "start": "npm run build && node dist/question-012.js",
+        "start": "npm run build && node dist/question-013.js",
         "test": "mocha tests --recursive --compilers js:babel-core/register"
     },
     "author": "",
